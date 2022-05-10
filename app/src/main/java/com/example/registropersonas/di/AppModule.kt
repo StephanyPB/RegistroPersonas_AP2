@@ -3,6 +3,7 @@ package com.example.registropersonas.di
 import android.content.Context
 import androidx.room.Room
 import com.example.registropersonas.data.PersonasDb
+import com.example.registropersonas.data.UsuarioDao
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -28,7 +29,7 @@ object AppModule {
     }
 
     @Provides
-    fun ProvidePersonaDAO(personasDb: PersonasDb): PersonasDb {
-        return PersonasDb.UsuarioDao
+    fun ProvideUsuarioDAO(personasDb: PersonasDb): UsuarioDao {
+        return personasDb.usuarioDao
     }
 }

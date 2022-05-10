@@ -28,13 +28,15 @@ class MainActivity : AppCompatActivity() {
                 Persona(
                     0,
                     binding.nombreEditText.text.toString(),
-                    binding.balanceEditText.floatValue()
+                    binding.emailEditText.text.toString(),
+                    0,
+                    binding.salarioEditText.floatValue()
                 )
             )
         }
             viewModel.guardado.observe(this) {
                 if (it) {
-                    Snackbar.make(binding.balanceEditText, "Guardado Exitoso!", Snackbar.LENGTH_LONG).show()
+                    Snackbar.make(binding.salarioEditText, "Guardado Exitoso!", Snackbar.LENGTH_LONG).show()
                 }
             }
     }

@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">RegistroPersonas</string>
     <string name="nombre">Nombre:</string>
-    <string name="balance">Balance:</string>
+    <string name="email">Email:</string>
+    <string name="ocupacionId">OcupacionId:</string>
+    <string name="salario">Salario:</string>
     <string name="guardar">Guardar:</string>
 </resources>

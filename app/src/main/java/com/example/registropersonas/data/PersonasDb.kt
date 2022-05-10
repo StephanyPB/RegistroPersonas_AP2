@@ -10,5 +10,6 @@ import com.example.registropersonas.model.Persona
     version = 1
 )
 abstract class PersonasDb: RoomDatabase() {
-    abstract  val ocupacionDao: PersonaDao
+    abstract val usuarioDao: UsuarioDao
+
 }

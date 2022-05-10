@@ -7,13 +7,11 @@ import kotlinx.coroutines.flow.Flow
 @Dao
 interface UsuarioDao {
 
-
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun Insertar(persona: Persona)
 
     @Delete
     suspend fun Eliminar(persona: Persona)
-
 
     @Query("""
         SELECT * 

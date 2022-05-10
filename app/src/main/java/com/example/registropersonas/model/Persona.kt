@@ -8,5 +8,7 @@ data class Persona (
     @PrimaryKey(autoGenerate = true)
     val personaId: Int,
     val nombre: String,
-    val balance: Float
+    val email: String,
+    val ocupacionId: Int,
+    val salario: Float,
 )

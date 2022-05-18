@@ -18,7 +18,7 @@ object AppModule {
 
     @Singleton
     @Provides
-    fun ProvideTicketDb(@ApplicationContext context: Context): PersonasDb {
+    fun ProvideUsuarioDb(@ApplicationContext context: Context): PersonasDb {
         val DATABASE_NAME = "PersonasDb"
         return Room.databaseBuilder(
             context,
@@ -29,7 +29,7 @@ object AppModule {
     }
 
     @Provides
-    fun ProvideUsuarioDAO(personasDb: PersonasDb): UsuarioDao {
+    fun ProvideUsuarioDaO(personasDb: PersonasDb): UsuarioDao {
         return personasDb.usuarioDao
     }
 }

@@ -5,7 +5,7 @@ import android.os.Bundle
 import androidx.activity.viewModels
 import com.example.registropersonas.databinding.ActivityMainBinding
 import com.example.registropersonas.model.Persona
-import com.example.registropersonas.viewmodel.UsuarioViewModel
+import com.example.registropersonas.viewmodel.UsuariosViewModel
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.textfield.TextInputEditText
 import dagger.hilt.android.AndroidEntryPoint
@@ -14,31 +14,12 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityMainBinding
-    private val viewModel: UsuarioViewModel by viewModels()
+    public lateinit var binding: ActivityMainBinding
+    public val viewModel: UsuariosViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setContentView(R.layout.lista_usuarios_fragment)
 
-        binding = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(binding.root)
-
-        binding.guardarButton.setOnClickListener {
-            viewModel.guardar(
-                Persona(
-                    0,
-                    binding.nombreEditText.text.toString(),
-                    binding.emailEditText.text.toString(),
-                    0,
-                    binding.salarioEditText.floatValue()
-                )
-            )
-        }
-            viewModel.guardado.observe(this) {
-                if (it) {
-                    Snackbar.make(binding.salarioEditText, "Guardado Exitoso!", Snackbar.LENGTH_LONG).show()
-                }
-            }
     }
-        fun TextInputEditText.floatValue() = text.toString().toFloatOrNull() ?: 0.0f
 }
